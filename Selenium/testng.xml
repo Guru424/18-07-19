@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Testng">
+  <test name="Sample test">
+     <classes>
+     <class name="com.testng.WebdriverTestNG"/>
+     <class name="com.testng.Basic"/>
+     </classes>
+     <!-- <packages>
+     <package name="com.testng.*"/>
+     </packages> -->
+  </test>
+</suite>

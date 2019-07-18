@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Testng]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Chrome test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.testng.MultiBrowser">
+        <methods>
+          <include name="closeApplication"/>
+          <include name="closeApplication"/>
+          <include name="login"/>
+          <include name="openApplication"/>
+          <include name="openApplication"/>
+        </methods>
+      </class> <!-- com.testng.MultiBrowser -->
+    </classes>
+  </test> <!-- Chrome test(failed) -->
+</suite> <!-- Failed suite [Testng] -->

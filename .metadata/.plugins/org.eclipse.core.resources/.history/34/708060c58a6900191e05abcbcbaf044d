@@ -1,0 +1,80 @@
+package com.webdriver;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class IndiaMoney1 {
+public static void main(String[] args) throws InterruptedException {
+	
+	WebDriver driver=new FirefoxDriver();
+	driver.get("https://www.indianmoneyinsurance.com/");
+	
+	//Click on Term tab
+	driver.findElement(By.id("term-sel")).click();
+	
+	//Select the Gender
+	driver.findElement(By.xpath("//*[@id='product-tab']/div[2]/div/div[2]/div[1]/div[1]/div[1]/div[1]/label/span")).click();
+	
+	//Select DOB
+	driver.findElement(By.id("termDob")).click();
+	WebDriverWait wait=new WebDriverWait(driver, 20);
+	WebElement s=driver.findElement(By.xpath("//html/body/div[7]/div[3]/table/tbody/tr/td/span[3]"));
+	wait.until(ExpectedConditions.visibilityOf(s)).click();
+	//driver.findElement(By.xpath("//table[@class='table-condensed']/tbody/tr/td/span[3]")).click();
+	driver.findElement(By.xpath("//table[@class='table-condensed']/tbody/tr/td/span[2]")).click();
+	
+	driver.findElement(By.xpath("//table[@class='table-condensed']/tbody/tr[2]/td[5]")).click();
+	
+	Thread.sleep(2000);
+	//Select Annual Income
+	driver.findElement(By.xpath("//*[@id='select2-term_annualincome_data-container']")).click();
+
+	driver.findElement(By.xpath("//ul[@id='select2-term_annualincome_data-results']/li[3]")).click();
+	Thread.sleep(2000);
+	//Select Cover
+	driver.findElement(By.id("select2-term_cover_data-container")).click();
+	Thread.sleep(500);
+	driver.findElement(By.xpath("//ul[@id='select2-term_cover_data-results']/li[2]")).click();
+	
+	//Enter the user mobile number
+	driver.findElement(By.id("term_usermobile")).sendKeys("6308977896");
+	
+	//Click on GetOuote
+	driver.findElement(By.xpath("//*[@id='product-tab']/div[2]/div/div[2]/div[2]/div/button")).click();
+	
+	Thread.sleep(2000);
+	//Enter the Area zipcode
+	WebElement zip=driver.findElement(By.id("termpincode"));
+	wait.until(ExpectedConditions.visibilityOf(zip)).sendKeys("560037");
+			//driver.findElement(By.id("termpincode")).sendKeys("560037");
+	
+	//Click on next button
+	driver.findElement(By.id("termpincodenext-btn")).click();
+	
+	//Smoke 
+	WebElement smoke=driver.findElement(By.id("smkyesbtn"));
+	wait.until(ExpectedConditions.visibilityOf(smoke)).click();
+	
+	//Click on Getquote button
+	WebElement getquote=driver.findElement(By.xpath("//*[@id='termcoverupto-btn']"));
+	wait.until(ExpectedConditions.visibilityOf(getquote)).click();
+	
+	WebElement BuyPlan=driver.findElement(By.xpath("//div[@class='buy-btn text-center']/button"));
+	wait.until(ExpectedConditions.visibilityOf(BuyPlan)).click();
+	
+	WebElement username=driver.findElement(By.name("maxuname"));
+	wait.until(ExpectedConditions.visibilityOf(username)).sendKeys("Guru");
+	
+	driver.findElement(By.name("maxuemail")).sendKeys("abcd@gmail.com");
+	
+	driver.findElement(By.id("userdataSubmit")).click();
+	
+	
+}
+}

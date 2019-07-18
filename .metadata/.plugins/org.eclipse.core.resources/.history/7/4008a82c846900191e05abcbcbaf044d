@@ -1,0 +1,25 @@
+package com.webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class IndiaMoney1 {
+public static void main(String[] args) {
+	
+	WebDriver driver=new FirefoxDriver();
+	driver.get("https://www.indianmoneyinsurance.com/");
+	
+	//Click on Term tab
+	driver.findElement(By.id("term-sel")).click();
+	
+	//Select the Gender
+	driver.findElement(By.xpath("//*[@id='product-tab']/div[2]/div/div[2]/div[1]/div[1]/div[1]/div[1]/label/span")).click();
+	
+	//Select DOB
+	driver.findElement(By.id("termDob")).click();
+	
+	
+	driver.close();
+}
+}

@@ -1,0 +1,43 @@
+package com.testng;
+
+public class Basic {
+
+	public void M1(){
+		System.out.println("This is BeforeClass");
+	}
+	
+	public void M2(){
+		System.out.println("This is AfterClass");
+	}
+	public void M3(){
+		System.out.println("This is BeforeMethod");
+	}
+	public void M4(){
+		System.out.println("This is AfterMethid");
+	}
+	public void M5(){
+		System.out.println("This is BeforeTest");
+	}
+	public void M6(){
+		System.out.println("This is AfterTest");
+	}
+	public void M7(){
+		System.out.println("This is BeforeSuite");
+	}
+	public void M9(){
+		System.out.println("This is AfterSuite");
+	}
+	
+	public void M10(){
+		System.out.println("This is test1");
+	}
+	
+	public void M11(){
+		System.out.println("This is Test2");
+	}
+	
+	public void M12(){
+		System.out.println("This is Test3");
+	}
+	
+}

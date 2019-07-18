@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Testng">
+  <test name="Sample test">
+  <parameter name="user" value="admin"/>
+  <parameter name="pwd" value="admin"/>
+     <classes>
+     <class name="com.testng.Parameterization"/>
+     </classes>
+  </test>
+</suite>

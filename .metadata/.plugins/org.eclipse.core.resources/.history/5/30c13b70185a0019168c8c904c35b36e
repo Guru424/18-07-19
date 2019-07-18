@@ -1,0 +1,60 @@
+package com.webdriver;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class IndiaMoney {
+public static void main(String[] args) throws InterruptedException {
+	
+	WebDriver driver=new FirefoxDriver();
+	driver.get("https://www.indianmoneyinsurance.com/");
+	
+	//Select the Gender
+	driver.findElement(By.xpath("//*[@id='product-tab']/div[2]/div/div[1]/div[1]/div[1]/div[2]/label/span")).click();
+	
+	//Click add people button
+	driver.findElement(By.id("preinsured")).click();
+	
+	//Select who want to Insure
+	
+	int insurer=driver.findElements(By.className("check-bx-item")).size();
+	System.out.println(insurer);
+	for(int i=1;i<insurer;i++)
+	{
+		String insu="Self";
+		Thread.sleep(2000);
+	String s=driver.findElement(By.xpath("//*[@id='user_det']/div["+i+"]/div")).getText();
+	System.out.println(s);
+	if(s.equals(insu)){
+		driver.findElement(By.className("check-bx-item")).click();
+	}
+	}
+	//Select the Date of birth
+	driver.findElement(By.id("insurerdob")).click();
+	driver.findElement(By.xpath("//div[3]/table/tbody/tr/td/span[3]")).click();
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//td/span[2]")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//html/body/div[7]/div[1]/table/tbody/tr[1]/td[5]")).click();
+	
+	
+	//Click on Done button
+	driver.findElement(By.id("insuredpeopel")).click();
+
+	//Enter the Insurer zipcode
+	driver.findElement(By.id("health_pincode")).sendKeys("560037");
+	
+
+	//Enter the insurer mobile  Number
+	driver.findElement(By.id("healthmobile")).sendKeys("95536637777");
+	
+	
+	//Click on get quete button
+	driver.findElement(By.xpath("//div[@class='form-nav']/button"))
+	
+}
+}

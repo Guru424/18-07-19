@@ -1,0 +1,21 @@
+package com.webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class DropDown {
+public static void main(String[] args) {
+	
+	WebDriver driver=new FirefoxDriver();
+	driver.get("file:///C:/Users/RH0172/Downloads/goBackAndWait%20%283%29.html");
+	
+	//First Method
+	driver.findElement(By.name("OptWeb")).sendKeys("Yahoo");
+	driver.findElement(By.name("btnGo")).click();
+	
+	
+	
+	
+}
+}

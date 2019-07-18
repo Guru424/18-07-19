@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Testng">
+  <test name="Sample test">
+  <groups>
+  <define name="all">
+  <include name="smoke"/>
+  <include name="sanity"/>
+  </define>
+  <run>
+  <include name="all"/> 
+  </run>
+  
+  </groups>
+     <classes>
+     <class name="com.testng.Grouping"/>
+     </classes>
+  </test>
+</suite>

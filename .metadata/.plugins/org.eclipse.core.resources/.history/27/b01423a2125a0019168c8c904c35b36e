@@ -1,0 +1,25 @@
+package com.webdriver;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class IndiaMoney {
+public static void main(String[] args) {
+	
+	WebDriver driver=new FirefoxDriver();
+	driver.get("https://www.indianmoneyinsurance.com/");
+	
+	//Select the Gender
+	driver.findElement(By.xpath("//*[@id='product-tab']/div[2]/div/div[1]/div[1]/div[1]/div[2]/label/span")).click();
+	
+	//Click add people button
+	driver.findElement(By.id("preinsured")).click();
+	
+	
+	
+}
+}
